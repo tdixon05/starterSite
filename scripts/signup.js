@@ -12,6 +12,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
         const emailRef = ref(database, 'signups');
         push(emailRef, { email: emailInput })
             .then(() => {
+                console.log('Email Input:', emailInput);
                 alert('Thank you for signing up!');
                 document.getElementById('email').value = '';
             })
