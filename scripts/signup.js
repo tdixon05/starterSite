@@ -1,5 +1,5 @@
 import { app } from './firebase/firebase-config.js';
-import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+import { database, ref, push } from './firebase/firebase-config.js';
 
 const database = getDatabase(app);
 
