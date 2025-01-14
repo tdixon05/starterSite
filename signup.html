@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Signup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <script defer src="scripts/signup.js"></script>
 </head>
 <body>
+  <div id="root"></div>
+  <script type="module">
+    import React from "https://esm.sh/react";
+    import ReactDOM from "https://esm.sh/react-dom";
+    import { Box, TextField, Button, Typography, Container } from "https://esm.sh/@mui/material";
 
-<!-- Navigation bar-->
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="signup.html">Signup</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-    </ul>
-</nav>
+    const App = () => (
+      <Container maxWidth="sm" sx={{ mt: 4 }}>
+        <Box
+          sx={{
+            bgcolor: "background.paper",
+            boxShadow: 3,
+            borderRadius: 2,
+            p: 4,
+          }}
+        >
+          <Typography variant="h4" textAlign="center" mb={2}>
+            Join Our Community!
+          </Typography>
+          <Typography variant="body1" textAlign="center" mb={4}>
+            Sign up to receive exclusive updates and offers.
+          </Typography>
+          <form id="signup-form">
+            <TextField
+              id="email"
+              label="Email"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              required
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ mt: 2 }}
+            >
+              Sign Up
+            </Button>
+          </form>
+        </Box>
+      </Container>
+    );
 
-<!-- Signup Page -->
-<section id="signup">
-    <h1>Stay Connected!</h1>
-    <p>Join Our Community and Never Miss an Update!</p>
-    <ul>
-        <li>Get exclusive access to [content, offers, or updates].</li>
-        <li>Be the first to know about [new products, updates, events].</li>
-    </ul>
-    <form>
-        <label for="name">Name (optional):</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email (required):</label>
-        <input type="email" id="email" name="email" required>
-        <button type="submit">Subscribe</button>
-    </form>
-</section>
-
-    <!-- JavaScript Files -->
-    <!-- Firebase Configuration -->
-    <script type="module" src="./firebase/firebase-config.js"></script>
-    <!-- Signup Logic -->
-    <script type="module" src="./scripts/signup.js"></script>
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
 </body>
 </html>
