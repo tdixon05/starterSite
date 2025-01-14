@@ -1,14 +1,28 @@
-import { database, ref, push } from '../firebase/firebase-config.js';
+// Import Firebase configuration and database modules
+import { app } from './firebase/firebase-config.js';
+import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
-document.querySelector('form').addEventListener('submit', (event) => {
+// Initialize the database
+const database = getDatabase(app);
+
+// Handle form submission
+document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const emailInput = document.getElementById('email').value;
 
-    if (email) {
-        const emailRef = ref(database, 'emails');
-        push(emailRef, email)
-            .then(() => alert('Thank you for signing up!'))
-            .catch(() => alert('Error occurred while signing up.'));
+    if (emailInput) {
+        const emailRef = ref(database, 'signups');
+        push(emailRef, { email: emailInput })
+            .then(() => {
+                alert('Thank you for signing up!');
+                document.getElementById('email').value = ''; // Clear the input field
+            })
+            .catch((error) => {
+                console.error('Error saving data:', error);
+                alert('Something went wrong. Please try again.');
+            });
+    } else {
+        alert('Please enter a valid email address.');
     }
 });
