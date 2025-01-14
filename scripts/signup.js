@@ -1,5 +1,5 @@
 // Import Firebase modules and the database from firebase-config.js
-import { app, database } from './firebase/firebase-config.js';
+import { app, database } from '../firebase/firebase-config.js';
 import { ref, push } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
 document.querySelector('form').addEventListener('submit', (event) => {

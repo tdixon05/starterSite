@@ -2,6 +2,7 @@
     "hosting": {
       "public": ".",
       "ignore": [
+        "firebase.json",
         "firebase-debug.log",
         "hosting..cache",
         "**/.*",
@@ -9,4 +10,5 @@
       ]
     }
   }
+  
   
