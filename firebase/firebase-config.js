@@ -6,7 +6,7 @@ import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.6.1
 const firebaseConfig = {
     apiKey: "AIzaSyA5lq1EkrUZoVNpu-bxgpwI9B-kTLu2tgU",
     authDomain: "fir-test-8d4a8.firebaseapp.com",
-    databaseURL: "https://fir-test-8d4a8-default-rtdb.firebaseio.com",
+    databaseURL: "https://fir-test-8d4a8.firebaseio.com/",
     projectId: "fir-test-8d4a8",
     storageBucket: "fir-test-8d4a8.appspot.com",
     messagingSenderId: "363637580656",
@@ -17,4 +17,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-export { app, database, ref, push };
+export { app, database };
