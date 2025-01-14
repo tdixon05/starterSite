@@ -1,5 +1,4 @@
 # Firebase configuration and logs
-firebase/firebase-config.js
 firebase-debug.log
 
 # Node.js dependencies
